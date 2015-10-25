@@ -29,21 +29,23 @@
 bool EhPrimo(long p)
 {
     //// Deixa 'p' positivo
-    if(p < 0) p = -p;
+    if(p < 0) 
+        p = -p;
 
     //// Se 'p' é 2 ou 3 então é primo
-    if(p == 2 || p == 3)    return true;
+    if(p == 2 || p == 3)    
+        return true;
 
     //// Se 'p' for 0, 1 ou par então não é primo
-    if(p == 0 || p == 1 || p % 2 == 0)  return false;
+    if(p == 0 || p == 1 || p % 2 == 0)  
+        return false;
 
     long raiz = (long) sqrt( (double)p );
 
     for(long i = 3; i <= raiz; i += 2)
-    {
-        if(p % i == 0) return false;
-    }
-
+        if(p % i == 0) 
+            return false;
+    
     return true;
 }
 
@@ -56,12 +58,7 @@ int main()
     std::cin >> p;
 
     if ( EhPrimo(p) )
-    {
         std::cout << "\nÉ primo.\n\n";
-    }
     else
-    {
         std::cout << "\nNão é primo.\n\n";
-    }
-
 }
